@@ -22,7 +22,7 @@ export class LoginComponent {
 
       this.Auth.getUserDetails(username, password)
          .subscribe(data => {
-          if(data.success) {
+          if(data.status) {
                 this.router.navigate(['dashboard'])
              // this.Auth.setLoggedIn(true)
           } else {

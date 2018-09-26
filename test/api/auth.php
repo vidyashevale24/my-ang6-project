@@ -6,27 +6,16 @@ if(isset($_POST) && !empty($_POST)) {
     $password = $_POST['password'];
     if($username == 'vidyasagar' && $password == 'vidyasagar') {
         $_SESSION['user'] = 'vidyasagar';
-        ?>
-        {
-        "success": true,
-        "secret": "This is the secret no one knows but the admin"
-        }
-        <?php
+        $response['status']   =     true;
+        $response['message']  =     "This is the secret no one knows but the admin";
+
     } else {
-        ?>
-        {
-        "success": false,
-        "message": "Invalid credentials"
-        }
-        <?php
+        $response['status']   =     true;
+        $response['message'] =     "Invalid credentials";
     }
 } else {
-    //var_dump($_POST)
-    ?>
-    {
-    "success": false,
-    "message": "Only POST access accepted"
-    }
-    <?php
+    $response['status']   =     true;
+    $response['message']   =     "Only POST access accepted";
 }
+echo json_encode($response);
 ?>
