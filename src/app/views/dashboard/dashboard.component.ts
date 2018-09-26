@@ -389,6 +389,9 @@ export class DashboardComponent implements OnInit {
  ngOnInit(): void {
    this.user.getSomeData().subscribe(data => {
      this.message = data.message
+     if(!data.status){
+        localStorage.removeItem('loggedIn')
+     }
    })
 
     // generate random values for mainChart
