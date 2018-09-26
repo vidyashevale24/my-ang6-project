@@ -22,12 +22,12 @@ export class LoginComponent {
 
       this.Auth.getUserDetails(username, password)
          .subscribe(data => {
-          if(data.status) {
+         if(data.status === true) {
                 this.router.navigate(['dashboard']);
                 this.Auth.setLoggedIn(true)
-          } else {
-              window.alert("Invalid credentials");
-          }
+         } else {
+             window.alert("Invalid credentials");
+         }
       })
   }
 

@@ -10,11 +10,11 @@ if(isset($_POST) && !empty($_POST)) {
         $response['message']  =     "This is the secret no one knows but the admin";
 
     } else {
-        $response['status']   =     true;
+        $response['status']   =     false;
         $response['message'] =     "Invalid credentials";
     }
 } else {
-    $response['status']   =     true;
+    $response['status']   =     false;
     $response['message']   =     "Only POST access accepted";
 }
 echo json_encode($response);

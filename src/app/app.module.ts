@@ -19,6 +19,7 @@ import { LoginComponent } from './views/login/login.component';
 import { RegisterComponent } from './views/register/register.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AuthService } from './auth.service';
+import { UserService } from './user.service';
 import { AuthGuard } from './auth.guard';
 const APP_CONTAINERS = [
   DefaultLayoutComponent
@@ -68,7 +69,7 @@ import { ChartsModule } from 'ng2-charts/ng2-charts';
   providers: [{
     provide: LocationStrategy,
     useClass: HashLocationStrategy
-  },AuthService,AuthGuard],
+  },AuthService,AuthGuard,UserService],
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }

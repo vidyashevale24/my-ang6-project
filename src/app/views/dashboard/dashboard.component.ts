@@ -2,14 +2,17 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { getStyle, hexToRgba } from '@coreui/coreui/dist/js/coreui-utilities';
 import { CustomTooltips } from '@coreui/coreui-plugin-chartjs-custom-tooltips';
+import {UserService} from "../../user.service";
 
 @Component({
   templateUrl: 'dashboard.component.html'
 })
 export class DashboardComponent implements OnInit {
+  message = "Loading...";
 
   radioModel: string = 'Month';
 
+  constructor(private user: UserService){ }
   // lineChart1
   public lineChart1Data: Array<any> = [
     {
@@ -377,8 +380,17 @@ export class DashboardComponent implements OnInit {
   public random(min: number, max: number) {
     return Math.floor(Math.random() * (max - min + 1) + min);
   }
+/*
+  ngOnInit(){
+    this.user.getSomeData().subscribe(data => {
+      this.message = data.message
+    })
+  }*/
+ ngOnInit(): void {
+   this.user.getSomeData().subscribe(data => {
+     this.message = data.message
+   })
 
-  ngOnInit(): void {
     // generate random values for mainChart
     for (let i = 0; i <= this.mainChartElements; i++) {
       this.mainChartData1.push(this.random(50, 200));
