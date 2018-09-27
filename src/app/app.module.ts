@@ -17,6 +17,7 @@ import { DefaultLayoutComponent } from './containers';
 import { P404Component } from './views/error/404.component';
 import { P500Component } from './views/error/500.component';
 import { LoginComponent } from './views/login/login.component';
+import { LogoutComponent } from './views/logout/logout.component';
 import { RegisterComponent } from './views/register/register.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AuthService } from './auth.service';
@@ -45,6 +46,7 @@ import { ChartsModule } from 'ng2-charts/ng2-charts';
 
 
 
+
 @NgModule({
   imports: [
     BrowserModule,
@@ -66,7 +68,8 @@ import { ChartsModule } from 'ng2-charts/ng2-charts';
     P404Component,
     P500Component,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    LogoutComponent
 
   ],
   providers: [{

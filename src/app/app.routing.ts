@@ -7,6 +7,7 @@ import { P404Component } from './views/error/404.component';
 import { P500Component } from './views/error/500.component';
 import { LoginComponent } from './views/login/login.component';
 import { RegisterComponent } from './views/register/register.component';
+import { LogoutComponent } from "./views/logout/logout.component";
 import { AuthGuard } from "./auth.guard";
 
 
@@ -45,6 +46,13 @@ export const routes: Routes = [
     component: RegisterComponent,
     data: {
       title: 'Register Page'
+    }
+  },
+  {
+    path: 'logout',
+    component: LogoutComponent,
+    data: {
+      title: 'Logout Page'
     }
   },
   {
